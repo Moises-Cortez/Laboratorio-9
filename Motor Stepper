@@ -1,0 +1,15 @@
+#include <Stepper.h>
+
+int pasosPorVuelta = 2048;
+Stepper motor(pasosPorVuelta, 8, 10, 9, 11);
+
+void setup() {
+  motor.setSpeed(10);
+}
+
+void loop() {
+  motor.step(pasosPorVuelta);
+  delay(2000);
+  motor.step(-pasosPorVuelta);
+  delay(2000);
+}
